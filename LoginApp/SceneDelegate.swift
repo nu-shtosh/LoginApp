@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  LoginApp
 //
-//  Created by Илья Дубенский on 30.09.2022.
+//  Created by Ilia D on 30.09.2022.
 //
 
 import UIKit
