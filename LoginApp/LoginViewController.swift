@@ -17,10 +17,6 @@ class LoginViewController: UIViewController {
     private let admin = User(username: "admin", password: "admin")
 
     // MARK: - Override Methods
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let welcomeVC = segue.destination as? WelcomeViewController
         else {
@@ -57,11 +53,13 @@ class LoginViewController: UIViewController {
                 andMessage: "Your name is \(admin.username) 🤖"
             )
             return
-        default:
+        case 1:
             showAlert(
                 with: "Oops!",
                 andMessage: "Your password is \(admin.password) 🔑"
             )
+            return
+        default:
             return
         }
     }
@@ -97,12 +95,14 @@ extension LoginViewController {
 // MARK: - User Class
 class User {
 
+
+    // MARK: - Properties
     let username: String
     let password: String
 
+    // MARK: - Initializators
     init(username: String, password: String) {
         self.username = username
         self.password = password
     }
-
 }
