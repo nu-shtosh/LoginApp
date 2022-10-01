@@ -39,6 +39,7 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func unwind(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.source is WelcomeViewController else { return }
         UserNameTF.text = nil
         PasswordTF.text = nil
         dismiss(animated: true)
