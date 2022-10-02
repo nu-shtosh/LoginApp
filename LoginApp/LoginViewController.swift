@@ -22,7 +22,7 @@ class LoginViewController: UIViewController {
         else {
             return
         }
-        welcomeVC.receivedUser = UserNameTF.text
+        welcomeVC.receivedUser = admin.username
     }
 
     // MARK: - IBActions
@@ -39,10 +39,8 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func unwind(for segue: UIStoryboardSegue, sender: Any?) {
-        guard segue.source is WelcomeViewController else { return }
         UserNameTF.text = nil
         PasswordTF.text = nil
-        dismiss(animated: true)
     }
 
 
@@ -53,15 +51,11 @@ class LoginViewController: UIViewController {
                 with: "Oops!",
                 andMessage: "Your name is \(admin.username) 🤖"
             )
-            return
-        case 1:
+        default:
             showAlert(
                 with: "Oops!",
                 andMessage: "Your password is \(admin.password) 🔑"
             )
-            return
-        default:
-            return
         }
     }
 }
@@ -94,16 +88,10 @@ extension LoginViewController {
 }
 
 // MARK: - User Class
-class User {
+struct User {
 
 
     // MARK: - Properties
     let username: String
     let password: String
-
-    // MARK: - Initializators
-    init(username: String, password: String) {
-        self.username = username
-        self.password = password
-    }
 }
