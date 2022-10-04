@@ -1,30 +1,14 @@
 //
-//  WelcomeViewController.swift
+//  Extensions.swift
 //  LoginApp
 //
-//  Created by Ilia D on 30.09.2022.
+//  Created by Илья Дубенский on 04.10.2022.
 //
 
 import UIKit
 
-final class WelcomeViewController: UIViewController {
-
-    // MARK: - IBOutlets
-    @IBOutlet var welcomeLabel: UILabel!
-
-    // MARK: - Properties
-    var receivedUser: String!
-
-    // MARK: - Override Methods
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setGradientBackground()
-        welcomeLabel.text = "Welcome, \(receivedUser ?? "")!"
-    }
-}
-
 // MARK: - Gradient view
-extension WelcomeViewController {
+extension UIViewController {
     func setGradientBackground() {
         let colorTop = UIColor(
             red: 155.0/255.0,
@@ -42,7 +26,7 @@ extension WelcomeViewController {
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = [colorTop, colorBottom]
         gradientLayer.locations = [0.0, 1.0]
-        gradientLayer.frame = self.view.bounds
+        gradientLayer.frame = view.bounds
 
         view.layer.insertSublayer(gradientLayer, at:0)
     }
