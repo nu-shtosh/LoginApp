@@ -56,7 +56,8 @@ class LoginViewController: UIViewController {
             sender.tag == 0
             ? showAlert(
                 with: "Oops!",
-                andMessage: "Your name is \(admin.username) 🤖"        )
+                andMessage: "Your name is \(admin.username) 🤖"
+            )
             : showAlert(
                 with: "Oops!",
                 andMessage: "Your password is \(admin.password) 🔑"
